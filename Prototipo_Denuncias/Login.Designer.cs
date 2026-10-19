@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel2 = new Panel();
             panelForm = new Panel();
+            pictureBox6 = new PictureBox();
+            btnLector = new Button();
+            label11 = new Label();
+            panel1 = new Panel();
+            pictureBox5 = new PictureBox();
+            label9 = new Label();
+            label8 = new Label();
             pictureBox4 = new PictureBox();
-            button1 = new Button();
+            btnIngresar = new Button();
             pictureBox1 = new PictureBox();
             panel4 = new Panel();
             pictureBox3 = new PictureBox();
@@ -48,6 +56,9 @@
             label1 = new Label();
             pictureBoxLogoPNP = new PictureBox();
             panelForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
@@ -61,17 +72,21 @@
             // 
             panel2.BackColor = Color.FromArgb(13, 59, 38);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 591);
+            panel2.Location = new Point(3, 721);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1054, 38);
+            panel2.Size = new Size(1048, 38);
             panel2.TabIndex = 1;
             // 
             // panelForm
             // 
             panelForm.Anchor = AnchorStyles.None;
             panelForm.BackColor = Color.White;
+            panelForm.Controls.Add(pictureBox6);
+            panelForm.Controls.Add(btnLector);
+            panelForm.Controls.Add(label11);
+            panelForm.Controls.Add(panel1);
             panelForm.Controls.Add(pictureBox4);
-            panelForm.Controls.Add(button1);
+            panelForm.Controls.Add(btnIngresar);
             panelForm.Controls.Add(pictureBox1);
             panelForm.Controls.Add(panel4);
             panelForm.Controls.Add(panel3);
@@ -83,44 +98,120 @@
             panelForm.Controls.Add(label2);
             panelForm.Controls.Add(label1);
             panelForm.Controls.Add(pictureBoxLogoPNP);
-            panelForm.Location = new Point(300, 59);
-            panelForm.MaximumSize = new Size(500, 600);
+            panelForm.Location = new Point(283, 57);
+            panelForm.MaximumSize = new Size(650, 700);
             panelForm.Name = "panelForm";
-            panelForm.Size = new Size(500, 495);
+            panelForm.Size = new Size(540, 635);
             panelForm.TabIndex = 2;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.FromArgb(201, 220, 243);
+            pictureBox6.Image = Properties.Resources.fingerprint;
+            pictureBox6.Location = new Point(91, 437);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(33, 26);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 14;
+            pictureBox6.TabStop = false;
+            // 
+            // btnLector
+            // 
+            btnLector.BackColor = Color.FromArgb(201, 220, 243);
+            btnLector.FlatStyle = FlatStyle.Flat;
+            btnLector.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLector.ForeColor = Color.FromArgb(9, 29, 46);
+            btnLector.Location = new Point(20, 432);
+            btnLector.Name = "btnLector";
+            btnLector.Size = new Size(508, 36);
+            btnLector.TabIndex = 13;
+            btnLector.Text = "Validar con DNIe / Lector Biométrico PNP";
+            btnLector.UseVisualStyleBackColor = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 7.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.FromArgb(113, 121, 114);
+            label11.Location = new Point(162, 407);
+            label11.Name = "label11";
+            label11.Size = new Size(214, 17);
+            label11.TabIndex = 12;
+            label11.Text = "O AUTENTICAR CON DISPOSITIVO";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(201, 220, 243);
+            panel1.Controls.Add(pictureBox5);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(label8);
+            panel1.Location = new Point(0, 545);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(540, 89);
+            panel1.TabIndex = 8;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.gavel;
+            pictureBox5.Location = new Point(7, 12);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(20, 20);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 9;
+            pictureBox5.TabStop = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 7.5F);
+            label9.Location = new Point(10, 31);
+            label9.Name = "label9";
+            label9.Size = new Size(492, 51);
+            label9.TabIndex = 3;
+            label9.Text = resources.GetString("label9.Text");
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 7.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(28, 13);
+            label8.Name = "label8";
+            label8.Size = new Size(375, 17);
+            label8.TabIndex = 3;
+            label8.Text = "ACCESO RESTRINGIDO - PERSONAL POLICIAL AUTORIZADO";
             // 
             // pictureBox4
             // 
             pictureBox4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox4.BackColor = Color.FromArgb(13, 59, 38);
             pictureBox4.Image = Properties.Resources.login_2;
-            pictureBox4.Location = new Point(115, 358);
+            pictureBox4.Location = new Point(151, 366);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(41, 22);
+            pictureBox4.Size = new Size(31, 22);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 7;
             pictureBox4.TabStop = false;
             // 
-            // button1
+            // btnIngresar
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(13, 59, 38);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(12, 349);
-            button1.Name = "button1";
-            button1.Size = new Size(463, 40);
-            button1.TabIndex = 6;
-            button1.Text = "INGRESAR AL SISTEMA";
-            button1.UseVisualStyleBackColor = false;
+            btnIngresar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnIngresar.BackColor = Color.FromArgb(13, 59, 38);
+            btnIngresar.FlatAppearance.BorderSize = 0;
+            btnIngresar.FlatStyle = FlatStyle.Flat;
+            btnIngresar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIngresar.ForeColor = Color.White;
+            btnIngresar.Location = new Point(16, 354);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(508, 44);
+            btnIngresar.TabIndex = 6;
+            btnIngresar.Text = "INGRESAR AL SISTEMA";
+            btnIngresar.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.info_circle;
-            pictureBox1.Location = new Point(12, 195);
+            pictureBox1.Location = new Point(16, 201);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 18);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -133,15 +224,15 @@
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(pictureBox3);
             panel4.Controls.Add(txtContrasena);
-            panel4.Location = new Point(12, 295);
+            panel4.Location = new Point(16, 300);
             panel4.Name = "panel4";
-            panel4.Size = new Size(463, 30);
+            panel4.Size = new Size(508, 39);
             panel4.TabIndex = 4;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources._lock;
-            pictureBox3.Location = new Point(3, 4);
+            pictureBox3.Location = new Point(3, 7);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(34, 20);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -151,10 +242,10 @@
             // txtContrasena
             // 
             txtContrasena.BorderStyle = BorderStyle.None;
-            txtContrasena.Location = new Point(40, 3);
-            txtContrasena.Multiline = true;
+            txtContrasena.Font = new Font("Segoe UI", 11F);
+            txtContrasena.Location = new Point(40, 6);
             txtContrasena.Name = "txtContrasena";
-            txtContrasena.Size = new Size(422, 22);
+            txtContrasena.Size = new Size(422, 25);
             txtContrasena.TabIndex = 8;
             txtContrasena.UseSystemPasswordChar = true;
             // 
@@ -164,24 +255,24 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(txtUsuario);
             panel3.Controls.Add(pictureBox2);
-            panel3.Location = new Point(12, 225);
+            panel3.Location = new Point(16, 230);
             panel3.Name = "panel3";
-            panel3.Size = new Size(463, 30);
+            panel3.Size = new Size(508, 39);
             panel3.TabIndex = 4;
             // 
             // txtUsuario
             // 
             txtUsuario.BorderStyle = BorderStyle.None;
-            txtUsuario.Location = new Point(40, 3);
-            txtUsuario.Multiline = true;
+            txtUsuario.Font = new Font("Segoe UI", 11F);
+            txtUsuario.Location = new Point(40, 6);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(422, 22);
+            txtUsuario.Size = new Size(422, 25);
             txtUsuario.TabIndex = 8;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.user_circle;
-            pictureBox2.Location = new Point(3, 4);
+            pictureBox2.Location = new Point(3, 7);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(34, 20);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -193,7 +284,7 @@
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 7F);
-            label7.Location = new Point(376, 272);
+            label7.Location = new Point(425, 281);
             label7.Name = "label7";
             label7.Size = new Size(99, 15);
             label7.TabIndex = 3;
@@ -205,7 +296,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(65, 73, 67);
-            label4.Location = new Point(396, 169);
+            label4.Location = new Point(436, 169);
             label4.Name = "label4";
             label4.Size = new Size(88, 17);
             label4.TabIndex = 3;
@@ -217,7 +308,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 7.5F);
             label5.ForeColor = Color.FromArgb(65, 73, 67);
-            label5.Location = new Point(48, 195);
+            label5.Location = new Point(52, 200);
             label5.Name = "label5";
             label5.Size = new Size(357, 17);
             label5.TabIndex = 3;
@@ -228,7 +319,7 @@
             label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label6.Location = new Point(12, 272);
+            label6.Location = new Point(16, 277);
             label6.Name = "label6";
             label6.Size = new Size(179, 20);
             label6.TabIndex = 3;
@@ -239,7 +330,7 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label3.Location = new Point(12, 169);
+            label3.Location = new Point(16, 169);
             label3.Name = "label3";
             label3.Size = new Size(123, 20);
             label3.TabIndex = 3;
@@ -250,7 +341,7 @@
             label2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(91, 135);
+            label2.Location = new Point(117, 135);
             label2.Name = "label2";
             label2.Size = new Size(332, 19);
             label2.TabIndex = 2;
@@ -261,7 +352,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(53, 85);
+            label1.Location = new Point(93, 85);
             label1.Name = "label1";
             label1.Size = new Size(385, 50);
             label1.TabIndex = 1;
@@ -272,7 +363,7 @@
             // 
             pictureBoxLogoPNP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxLogoPNP.Image = Properties.Resources.logoProyecto;
-            pictureBoxLogoPNP.Location = new Point(215, 21);
+            pictureBoxLogoPNP.Location = new Point(239, 21);
             pictureBoxLogoPNP.Name = "pictureBoxLogoPNP";
             pictureBoxLogoPNP.Size = new Size(72, 61);
             pictureBoxLogoPNP.SizeMode = PictureBoxSizeMode.Zoom;
@@ -284,16 +375,21 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 41, 59);
-            ClientSize = new Size(1054, 629);
+            ClientSize = new Size(1054, 762);
             Controls.Add(panelForm);
             Controls.Add(panel2);
-            FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "|";
             Resize += Login_Resize;
+            Controls.SetChildIndex(panel2, 0);
+            Controls.SetChildIndex(panelForm, 0);
             panelForm.ResumeLayout(false);
             panelForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
@@ -324,7 +420,14 @@
         private TextBox txtContrasena;
         private Label label7;
         private Label label6;
-        private Button button1;
+        private Button btnIngresar;
         private PictureBox pictureBox4;
+        private Label label8;
+        private Label label9;
+        private Panel panel1;
+        private PictureBox pictureBox5;
+        private Label label11;
+        private Button btnLector;
+        private PictureBox pictureBox6;
     }
 }

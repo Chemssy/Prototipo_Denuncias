@@ -17,6 +17,8 @@ namespace Prototipo_Denuncias
         public FormBase()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
         private void panelBotonesSuperior_MouseUp(object sender, MouseEventArgs e)
@@ -61,5 +63,45 @@ namespace Prototipo_Denuncias
 
             }
         }
+
+        protected override void WndProc(ref Message m)
+        {
+            const int WM_NCHITTEST = 0x84;
+            const int bordeGrosor = 10; // Grosor del área para arrastrar en píxeles
+
+            base.WndProc(ref m);
+
+            if (m.Msg == WM_NCHITTEST)
+            {
+                // Convertir las coordenadas de la pantalla a las coordenadas del cliente (formulario)
+                Point posicionMouse = this.PointToClient(new Point(m.LParam.ToInt32()));
+
+                bool bordeSuperior = posicionMouse.Y <= bordeGrosor;
+                bool bordeInferior = posicionMouse.Y >= this.ClientSize.Height - bordeGrosor;
+                bool bordeIzquierdo = posicionMouse.X <= bordeGrosor;
+                bool bordeDerecho = posicionMouse.X >= this.ClientSize.Width - bordeGrosor;
+
+                // Evaluar las 4 esquinas primero
+                if (bordeSuperior && bordeIzquierdo)
+                    m.Result = (IntPtr)13; // Esquina superior izquierda
+                else if (bordeSuperior && bordeDerecho)
+                    m.Result = (IntPtr)14; // Esquina superior derecha
+                else if (bordeInferior && bordeIzquierdo)
+                    m.Result = (IntPtr)16; // Esquina inferior izquierda
+                else if (bordeInferior && bordeDerecho)
+                    m.Result = (IntPtr)17; // Esquina inferior derecha
+
+                // Evaluar los 4 lados
+                else if (bordeSuperior)
+                    m.Result = (IntPtr)12; // Borde superior
+                else if (bordeInferior)
+                    m.Result = (IntPtr)15; // Borde inferior
+                else if (bordeIzquierdo)
+                    m.Result = (IntPtr)10; // Borde izquierdo
+                else if (bordeDerecho)
+                    m.Result = (IntPtr)11; // Borde derecho[cite: 16]
+            }
+        }
+
     }
 }

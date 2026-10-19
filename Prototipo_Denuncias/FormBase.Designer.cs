@@ -45,9 +45,9 @@
             panelBotonesSuperior.Controls.Add(pictureBoxMinimizar);
             panelBotonesSuperior.Controls.Add(pictureBoxMaximizar);
             panelBotonesSuperior.Dock = DockStyle.Top;
-            panelBotonesSuperior.Location = new Point(0, 0);
+            panelBotonesSuperior.Location = new Point(3, 3);
             panelBotonesSuperior.Name = "panelBotonesSuperior";
-            panelBotonesSuperior.Size = new Size(800, 32);
+            panelBotonesSuperior.Size = new Size(794, 32);
             panelBotonesSuperior.TabIndex = 0;
             panelBotonesSuperior.MouseDown += panelBotonesSuperior_MouseDown;
             panelBotonesSuperior.MouseMove += panelBotonesSuperior_MouseMove;
@@ -57,7 +57,7 @@
             // 
             pictureBoxCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxCerrar.Image = Properties.Resources.x;
-            pictureBoxCerrar.Location = new Point(763, 3);
+            pictureBoxCerrar.Location = new Point(757, 3);
             pictureBoxCerrar.Name = "pictureBoxCerrar";
             pictureBoxCerrar.Size = new Size(25, 25);
             pictureBoxCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -69,7 +69,7 @@
             // 
             pictureBoxMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxMinimizar.Image = Properties.Resources.minus;
-            pictureBoxMinimizar.Location = new Point(701, 4);
+            pictureBoxMinimizar.Location = new Point(695, 4);
             pictureBoxMinimizar.Name = "pictureBoxMinimizar";
             pictureBoxMinimizar.Size = new Size(25, 25);
             pictureBoxMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -81,7 +81,7 @@
             // 
             pictureBoxMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxMaximizar.Image = Properties.Resources.maximize;
-            pictureBoxMaximizar.Location = new Point(732, 3);
+            pictureBoxMaximizar.Location = new Point(726, 3);
             pictureBoxMaximizar.Name = "pictureBoxMaximizar";
             pictureBoxMaximizar.Size = new Size(25, 25);
             pictureBoxMaximizar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -93,10 +93,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(30, 41, 59);
+            ClientSize = new Size(800, 600);
             Controls.Add(panelBotonesSuperior);
             FormBorderStyle = FormBorderStyle.None;
+            MinimumSize = new Size(800, 600);
             Name = "FormBase";
+            Padding = new Padding(3);
             Text = "FormBase";
             panelBotonesSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxCerrar).EndInit();

@@ -8,7 +8,6 @@ namespace Prototipo_Denuncias
             InitializeComponent();
         }
 
-       
 
         private void Login_Resize(object sender, EventArgs e)
         {
