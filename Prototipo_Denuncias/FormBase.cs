@@ -21,6 +21,14 @@ namespace Prototipo_Denuncias
             this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
+        protected Dictionary<string, string> usuariosPoliciales = new Dictionary<string, string>()
+        {
+            { "31894022", "admin123" },
+            { "76543210", "seguro456" },
+            { "12345678", "policia123" }
+        };
+
+
         private void panelBotonesSuperior_MouseUp(object sender, MouseEventArgs e)
         {
             move = false;

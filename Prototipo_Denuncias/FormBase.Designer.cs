@@ -109,10 +109,9 @@
         }
 
         #endregion
-
-        private Panel panelBotonesSuperior;
         private PictureBox pictureBoxCerrar;
         private PictureBox pictureBoxMinimizar;
         private PictureBox pictureBoxMaximizar;
+        protected Panel panelBotonesSuperior;
     }
 }

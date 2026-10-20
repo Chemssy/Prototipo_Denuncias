@@ -68,6 +68,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogoPNP).BeginInit();
             SuspendLayout();
             // 
+            // panelBotonesSuperior
+            // 
+            panelBotonesSuperior.Size = new Size(1048, 32);
+            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(13, 59, 38);
@@ -206,6 +210,7 @@
             btnIngresar.TabIndex = 6;
             btnIngresar.Text = "INGRESAR AL SISTEMA";
             btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // pictureBox1
             // 
@@ -374,6 +379,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = Color.FromArgb(30, 41, 59);
             ClientSize = new Size(1054, 762);
             Controls.Add(panelForm);
@@ -382,6 +388,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "|";
             Resize += Login_Resize;
+            Controls.SetChildIndex(panelBotonesSuperior, 0);
             Controls.SetChildIndex(panel2, 0);
             Controls.SetChildIndex(panelForm, 0);
             panelForm.ResumeLayout(false);
