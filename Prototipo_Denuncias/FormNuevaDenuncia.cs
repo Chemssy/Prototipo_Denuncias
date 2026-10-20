@@ -13,13 +13,30 @@ namespace Prototipo_Denuncias
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public Expediente ExpedienteGenerado { get; set; }
+        
+        
+        
         public FormNuevaDenuncia()
         {
             InitializeComponent();
             CargarTiposDelitos(comboBoxCategoriaDenuncia);
+            CargarTiposDistritos();
+            CargarTiposEstados();
             
         }
+        
 
+        void CargarTiposDistritos()
+        {
+            string[] tiposDistritos = { "Independencia", "Los Olivos", "Comas", "Carabayllo", "Miraflores" };
+            comboBoxDistritoSuceso.Items.AddRange(tiposDistritos);
+        }
+
+        void CargarTiposEstados()
+        {
+            string[] tiposEstados = { "Recibida", "En trámite", "Resuelta" };
+            comboBoxEstado.Items.AddRange(tiposEstados);
+        }
 
         private void FormNuevaDenuncia_Load(object sender, EventArgs e)
         {
@@ -34,7 +51,7 @@ namespace Prototipo_Denuncias
         {
             ExpedienteGenerado = new Expediente
             {
-                Codigo = label2.Text,
+                Codigo = lblCodigoExpediente.Text,
                 FechaRegistro = DateTime.Now.ToString("dd/MM/yyyy HH:mm"),
                 DNI = txtDNI.Text,
                 Nombres = txtNombreCompleto.Text,

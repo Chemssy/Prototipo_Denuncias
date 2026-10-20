@@ -175,6 +175,7 @@
             // 
             // comboBoxEstado
             // 
+            comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEstado.FormattingEnabled = true;
             comboBoxEstado.Location = new Point(604, 50);
             comboBoxEstado.Name = "comboBoxEstado";
@@ -210,6 +211,7 @@
             // 
             // comboBoxDistritoSuceso
             // 
+            comboBoxDistritoSuceso.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxDistritoSuceso.FormattingEnabled = true;
             comboBoxDistritoSuceso.Location = new Point(312, 50);
             comboBoxDistritoSuceso.Name = "comboBoxDistritoSuceso";
@@ -218,6 +220,7 @@
             // 
             // comboBoxCategoriaDenuncia
             // 
+            comboBoxCategoriaDenuncia.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCategoriaDenuncia.FormattingEnabled = true;
             comboBoxCategoriaDenuncia.Location = new Point(23, 50);
             comboBoxCategoriaDenuncia.Name = "comboBoxCategoriaDenuncia";

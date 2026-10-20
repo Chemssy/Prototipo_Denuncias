@@ -233,9 +233,11 @@
             btnBuscar.TabIndex = 4;
             btnBuscar.Text = "BUSCAR";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // comboBoxTipoDenuncia
             // 
+            comboBoxTipoDenuncia.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTipoDenuncia.FormattingEnabled = true;
             comboBoxTipoDenuncia.Location = new Point(23, 30);
             comboBoxTipoDenuncia.Name = "comboBoxTipoDenuncia";
