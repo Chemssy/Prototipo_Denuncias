@@ -10,17 +10,15 @@ namespace Prototipo_Denuncias
 {
     public partial class PanelCentral : FormBase
     {
+
+        private List<Expediente> listaExpedientes = new List<Expediente>();
+
         public PanelCentral()
         {
             InitializeComponent();
-            cargarTiposDelitos();
+            CargarTiposDelitos(comboBoxTipoDenuncia);
         }
 
-        void cargarTiposDelitos()
-        {
-            string[] tiposDelitos = {"Delito Contra el Patrimonio","Extorsion y Cobro de Cupos", "Delito Contra la Vida, el Cuerpo y la Salud","Microcomercialización de Drogas","Delitos Informaticos y Estafas"};
-            comboBoxTipoDenuncia.Items.AddRange(tiposDelitos);
-        }
 
         void Salir()
         {
@@ -53,6 +51,45 @@ namespace Prototipo_Denuncias
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void ActualizarTabla()
+        {
+            // Limpiamos la tabla visual para no duplicar datos (cambia el nombre si tu tabla se llama distinto)
+            dgvExpedientes.Rows.Clear();
+
+            // Recorremos nuestra lista en memoria
+            foreach (Expediente exp in listaExpedientes)
+            {
+                // Agregamos una nueva fila. 
+                // OJO: El orden en que pones las variables aquí DEBE ser el mismo 
+                // orden de las columnas que creaste visualmente en tu DataGridView.
+                dgvExpedientes.Rows.Add(
+                    exp.Codigo,
+                    exp.FechaRegistro,
+                    exp.Categoria,
+                    exp.Nombres, // En tu tabla dice "REMITENTE"
+                    "Jhon Doe", // En tu tabla dice "EFECTIVO A CARGO" (Dato estático por ahora)
+                    exp.Estado
+                );
+            }
+        }
+
+        private void btnNuevaSolicitud_Click(object sender, EventArgs e)
+        {
+            // Creamos la ventana modal
+            FormNuevaDenuncia modal = new FormNuevaDenuncia();
+
+            // ShowDialog() abre la ventana y pausa el Panel Central. 
+            // Si el usuario presionó "Registrar Expediente", DialogResult será OK.
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                // Extraemos la "caja" de datos que llenó el modal y la guardamos en nuestra memoria
+                listaExpedientes.Add(modal.ExpedienteGenerado);
+
+                // Refrescamos la tabla para que se vea el nuevo registro
+                ActualizarTabla();
+            }
         }
 
         //private void Login_Resize(object sender, EventArgs e)

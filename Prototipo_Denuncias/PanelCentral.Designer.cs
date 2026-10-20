@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            dataGridView1 = new DataGridView();
+            dgvExpedientes = new DataGridView();
             dgvCodigo = new DataGridViewTextBoxColumn();
             dgvFechaRegistro = new DataGridViewTextBoxColumn();
             dgvCategoria = new DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@
             label2 = new Label();
             label1 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpedientes).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -74,7 +74,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(dgvExpedientes);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(label4);
@@ -85,19 +85,19 @@
             panel1.Size = new Size(1062, 562);
             panel1.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvExpedientes
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dgvCodigo, dgvFechaRegistro, dgvCategoria, dgvRemitente, dgvEfectivoPolicial, dgvEstado });
-            dataGridView1.Location = new Point(355, 283);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(680, 216);
-            dataGridView1.TabIndex = 4;
+            dgvExpedientes.AllowUserToAddRows = false;
+            dgvExpedientes.AllowUserToDeleteRows = false;
+            dgvExpedientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvExpedientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvExpedientes.Columns.AddRange(new DataGridViewColumn[] { dgvCodigo, dgvFechaRegistro, dgvCategoria, dgvRemitente, dgvEfectivoPolicial, dgvEstado });
+            dgvExpedientes.Location = new Point(355, 283);
+            dgvExpedientes.Name = "dgvExpedientes";
+            dgvExpedientes.ReadOnly = true;
+            dgvExpedientes.RowHeadersWidth = 51;
+            dgvExpedientes.Size = new Size(680, 216);
+            dgvExpedientes.TabIndex = 4;
             // 
             // dgvCodigo
             // 
@@ -339,6 +339,7 @@
             btnNuevaSolicitud.Text = "NUEVA SOLICITUD";
             btnNuevaSolicitud.TextAlign = ContentAlignment.MiddleLeft;
             btnNuevaSolicitud.UseVisualStyleBackColor = false;
+            btnNuevaSolicitud.Click += btnNuevaSolicitud_Click;
             // 
             // btnSalir
             // 
@@ -408,7 +409,7 @@
             Controls.SetChildIndex(panel2, 0);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvExpedientes).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -441,7 +442,7 @@
         private Button btnBuscar;
         private Button btnLimpiar;
         private Label label8;
-        private DataGridView dataGridView1;
+        private DataGridView dgvExpedientes;
         private Label lblTotalRegistros;
         private Button btnSalir;
         private DataGridViewTextBoxColumn dgvCodigo;

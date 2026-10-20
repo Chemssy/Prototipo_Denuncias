@@ -28,6 +28,23 @@ namespace Prototipo_Denuncias
             { "12345678", "policia123" }
         };
 
+        protected void CargarTiposDelitos(ComboBox comboDestino)
+        {
+            // Limpiamos por si acaso para no duplicar datos si se llama dos veces
+            comboDestino.Items.Clear();
+
+            // Tu arreglo original
+            string[] tiposDelitos = {
+            "Delito Contra el Patrimonio",
+            "Extorsion y Cobro de Cupos",
+            "Delito Contra la Vida, el Cuerpo y la Salud",
+            "Microcomercialización de Drogas",
+            "Delitos Informaticos y Estafas"
+            };
+
+            // Llenamos el ComboBox que nos envíen como parámetro
+            comboDestino.Items.AddRange(tiposDelitos);
+        }
 
         private void panelBotonesSuperior_MouseUp(object sender, MouseEventArgs e)
         {
