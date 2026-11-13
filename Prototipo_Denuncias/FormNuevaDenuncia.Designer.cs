@@ -60,7 +60,7 @@
             // 
             // panelBotonesSuperior
             // 
-            panelBotonesSuperior.Size = new Size(1060, 32);
+            panelBotonesSuperior.Size = new Size(897, 24);
             // 
             // panel1
             // 
@@ -71,9 +71,10 @@
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(groupBox2);
             panel1.Controls.Add(groupBox1);
-            panel1.Location = new Point(75, 57);
+            panel1.Location = new Point(66, 43);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(914, 584);
+            panel1.Size = new Size(800, 438);
             panel1.TabIndex = 1;
             // 
             // btnRegistrarExpediente
@@ -82,9 +83,10 @@
             btnRegistrarExpediente.FlatStyle = FlatStyle.Flat;
             btnRegistrarExpediente.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistrarExpediente.ForeColor = Color.White;
-            btnRegistrarExpediente.Location = new Point(681, 522);
+            btnRegistrarExpediente.Location = new Point(596, 392);
+            btnRegistrarExpediente.Margin = new Padding(3, 2, 3, 2);
             btnRegistrarExpediente.Name = "btnRegistrarExpediente";
-            btnRegistrarExpediente.Size = new Size(208, 43);
+            btnRegistrarExpediente.Size = new Size(182, 32);
             btnRegistrarExpediente.TabIndex = 6;
             btnRegistrarExpediente.Text = "Registrar Expediente";
             btnRegistrarExpediente.UseVisualStyleBackColor = false;
@@ -92,9 +94,10 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(565, 522);
+            btnCancelar.Location = new Point(494, 392);
+            btnCancelar.Margin = new Padding(3, 2, 3, 2);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(104, 43);
+            btnCancelar.Size = new Size(91, 32);
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -104,27 +107,30 @@
             // 
             groupBox3.Controls.Add(txtDescripcion);
             groupBox3.Controls.Add(label5);
-            groupBox3.Location = new Point(22, 335);
+            groupBox3.Location = new Point(19, 251);
+            groupBox3.Margin = new Padding(3, 2, 3, 2);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(867, 181);
+            groupBox3.Padding = new Padding(3, 2, 3, 2);
+            groupBox3.Size = new Size(759, 136);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "DETALLE Y EVIDENCIA";
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(22, 60);
+            txtDescripcion.Location = new Point(19, 45);
+            txtDescripcion.Margin = new Padding(3, 2, 3, 2);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(824, 102);
+            txtDescripcion.Size = new Size(722, 78);
             txtDescripcion.TabIndex = 0;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(23, 37);
+            label5.Location = new Point(20, 28);
             label5.Name = "label5";
-            label5.Size = new Size(184, 20);
+            label5.Size = new Size(146, 15);
             label5.TabIndex = 1;
             label5.Text = "Descripción de los Hechos";
             // 
@@ -135,26 +141,27 @@
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(914, 74);
+            panel2.Size = new Size(800, 56);
             panel2.TabIndex = 4;
             // 
             // lblCodigoExpediente
             // 
             lblCodigoExpediente.AutoSize = true;
             lblCodigoExpediente.Font = new Font("Segoe UI", 12F);
-            lblCodigoExpediente.Location = new Point(222, 17);
+            lblCodigoExpediente.Location = new Point(194, 13);
             lblCodigoExpediente.Name = "lblCodigoExpediente";
-            lblCodigoExpediente.Size = new Size(0, 28);
+            lblCodigoExpediente.Size = new Size(0, 21);
             lblCodigoExpediente.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F);
-            label1.Location = new Point(22, 22);
+            label1.Location = new Point(19, 16);
             label1.Name = "label1";
-            label1.Size = new Size(184, 25);
+            label1.Size = new Size(147, 20);
             label1.TabIndex = 0;
             label1.Text = "CÓDIGO GENERADO";
             // 
@@ -166,9 +173,11 @@
             groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(comboBoxDistritoSuceso);
             groupBox2.Controls.Add(comboBoxCategoriaDenuncia);
-            groupBox2.Location = new Point(21, 216);
+            groupBox2.Location = new Point(18, 162);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(868, 104);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(760, 78);
             groupBox2.TabIndex = 3;
             groupBox2.TabStop = false;
             groupBox2.Text = "CLASIFICACIÓN Y UBICACION";
@@ -177,35 +186,36 @@
             // 
             comboBoxEstado.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxEstado.FormattingEnabled = true;
-            comboBoxEstado.Location = new Point(604, 50);
+            comboBoxEstado.Location = new Point(528, 38);
+            comboBoxEstado.Margin = new Padding(3, 2, 3, 2);
             comboBoxEstado.Name = "comboBoxEstado";
-            comboBoxEstado.Size = new Size(243, 28);
+            comboBoxEstado.Size = new Size(213, 23);
             comboBoxEstado.TabIndex = 0;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(604, 28);
+            label4.Location = new Point(528, 21);
             label4.Name = "label4";
-            label4.Size = new Size(54, 20);
+            label4.Size = new Size(42, 15);
             label4.TabIndex = 1;
             label4.Text = "Estado";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(312, 28);
+            label3.Location = new Point(273, 21);
             label3.Name = "label3";
-            label3.Size = new Size(58, 20);
+            label3.Size = new Size(45, 15);
             label3.TabIndex = 1;
             label3.Text = "Distrito";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(23, 28);
+            label2.Location = new Point(20, 21);
             label2.Name = "label2";
-            label2.Size = new Size(161, 20);
+            label2.Size = new Size(127, 15);
             label2.TabIndex = 1;
             label2.Text = "Categoria de Denuncia";
             // 
@@ -213,18 +223,20 @@
             // 
             comboBoxDistritoSuceso.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxDistritoSuceso.FormattingEnabled = true;
-            comboBoxDistritoSuceso.Location = new Point(312, 50);
+            comboBoxDistritoSuceso.Location = new Point(273, 38);
+            comboBoxDistritoSuceso.Margin = new Padding(3, 2, 3, 2);
             comboBoxDistritoSuceso.Name = "comboBoxDistritoSuceso";
-            comboBoxDistritoSuceso.Size = new Size(243, 28);
+            comboBoxDistritoSuceso.Size = new Size(213, 23);
             comboBoxDistritoSuceso.TabIndex = 0;
             // 
             // comboBoxCategoriaDenuncia
             // 
             comboBoxCategoriaDenuncia.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxCategoriaDenuncia.FormattingEnabled = true;
-            comboBoxCategoriaDenuncia.Location = new Point(23, 50);
+            comboBoxCategoriaDenuncia.Location = new Point(20, 38);
+            comboBoxCategoriaDenuncia.Margin = new Padding(3, 2, 3, 2);
             comboBoxCategoriaDenuncia.Name = "comboBoxCategoriaDenuncia";
-            comboBoxCategoriaDenuncia.Size = new Size(243, 28);
+            comboBoxCategoriaDenuncia.Size = new Size(213, 23);
             comboBoxCategoriaDenuncia.TabIndex = 0;
             // 
             // groupBox1
@@ -233,9 +245,11 @@
             groupBox1.Controls.Add(txtDNI);
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(label6);
-            groupBox1.Location = new Point(21, 96);
+            groupBox1.Location = new Point(18, 72);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(868, 104);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(760, 78);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "DATOS DEL CIUDADANO";
@@ -243,34 +257,36 @@
             // txtNombreCompleto
             // 
             txtNombreCompleto.Font = new Font("Segoe UI", 10F);
-            txtNombreCompleto.Location = new Point(231, 52);
+            txtNombreCompleto.Location = new Point(202, 39);
+            txtNombreCompleto.Margin = new Padding(3, 2, 3, 2);
             txtNombreCompleto.Name = "txtNombreCompleto";
-            txtNombreCompleto.Size = new Size(616, 30);
+            txtNombreCompleto.Size = new Size(540, 25);
             txtNombreCompleto.TabIndex = 2;
             // 
             // txtDNI
             // 
             txtDNI.Font = new Font("Segoe UI", 10F);
-            txtDNI.Location = new Point(30, 52);
+            txtDNI.Location = new Point(26, 39);
+            txtDNI.Margin = new Padding(3, 2, 3, 2);
             txtDNI.Name = "txtDNI";
-            txtDNI.Size = new Size(115, 30);
+            txtDNI.Size = new Size(101, 25);
             txtDNI.TabIndex = 2;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(231, 23);
+            label7.Location = new Point(202, 17);
             label7.Name = "label7";
-            label7.Size = new Size(224, 20);
+            label7.Size = new Size(178, 15);
             label7.TabIndex = 1;
             label7.Text = "Nombres y Apellidos Completos";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(23, 23);
+            label6.Location = new Point(20, 17);
             label6.Name = "label6";
-            label6.Size = new Size(35, 20);
+            label6.Size = new Size(27, 15);
             label6.TabIndex = 1;
             label6.Text = "DNI";
             // 
@@ -282,10 +298,11 @@
             // 
             // FormNuevaDenuncia
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1066, 700);
+            ClientSize = new Size(903, 506);
             Controls.Add(panel1);
+            MinimumSize = new Size(612, 338);
             Name = "FormNuevaDenuncia";
             Text = "FormNuevaDenuncia";
             Load += FormNuevaDenuncia_Load;

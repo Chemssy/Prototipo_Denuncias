@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Windows.Forms;
 
@@ -22,7 +23,21 @@ namespace Prototipo_Denuncias
             InitializeComponent();
             CargarTiposDelitos(comboBoxTipoDenuncia);
 
-            CargarDatosPrueba();
+            dgvEstado.Items.AddRange(tiposEstados);
+            dgvExpedientes.EditMode = DataGridViewEditMode.EditOnEnter;  // se abre el combobox del data grid view 
+            dgvExpedientes.CurrentCellDirtyStateChanged += dgvExpedientes_CurrentCellDirtyStateChanged;
+            dgvExpedientes.CellValueChanged += dgvExpedientes_CellValueChanged;
+
+            if (ArchivoExpediente.Existe())
+            {
+                listaExpedientes = ArchivoExpediente.Cargar();
+            }
+            else
+            {
+                CargarDatosPrueba();
+                ArchivoExpediente.Guardar(listaExpedientes);
+            }
+
             ActualizarTabla();
         }
 
@@ -103,23 +118,19 @@ namespace Prototipo_Denuncias
 
         private void ActualizarTabla(List<Expediente> listaFiltrada = null)
         {
-            List<Expediente> datosAMostrar = listaFiltrada ?? listaExpedientes;
+            actualizandoTabla = true;
 
+            List<Expediente> datosAMostrar = listaFiltrada ?? listaExpedientes;
             dgvExpedientes.Rows.Clear();
 
-            // Recorremos nuestra lista en memoria
             foreach (Expediente exp in datosAMostrar)
             {
-
-                dgvExpedientes.Rows.Add(
-                    exp.Codigo,
-                    exp.FechaRegistro,
-                    exp.Categoria,
-                    exp.Nombres,
-                    "Jhon Doe", // dato estatico
-                    exp.Estado
-                );
+                dgvExpedientes.Rows.Add(exp.Codigo, exp.FechaRegistro, exp.Categoria,
+                                        exp.Nombres, "Jhon Doe", exp.Estado);
             }
+
+            actualizandoTabla = false;
+            lblTotalRegistros.Text = listaExpedientes.Count.ToString();
         }
 
         private void btnNuevaSolicitud_Click(object sender, EventArgs e)
@@ -130,6 +141,7 @@ namespace Prototipo_Denuncias
             if (modal.ShowDialog() == DialogResult.OK)
             {
                 listaExpedientes.Add(modal.ExpedienteGenerado);
+                ArchivoExpediente.Guardar(listaExpedientes);   //
                 ActualizarTabla();
             }
         }
@@ -148,6 +160,41 @@ namespace Prototipo_Denuncias
             ActualizarTabla(resultados);
         }
 
+        private bool actualizandoTabla = false;
 
+        //Confirmacion para el cambio del estado
+        private void dgvExpedientes_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvExpedientes.IsCurrentCellDirty)
+            {
+                dgvExpedientes.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+        }
+
+        //Para actualizacion de estado
+        private void dgvExpedientes_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (actualizandoTabla || e.RowIndex < 0 || e.ColumnIndex != dgvEstado.Index) return;
+
+            string codigo = dgvExpedientes.Rows[e.RowIndex].Cells[dgvCodigo.Index].Value?.ToString();
+            string nuevoEstado = dgvExpedientes.Rows[e.RowIndex].Cells[dgvEstado.Index].Value?.ToString();
+
+            foreach (Expediente exp in listaExpedientes)
+            {
+                if (exp.Codigo == codigo)
+                {
+                    exp.Estado = nuevoEstado;
+                    break;
+                }
+            }
+
+            ArchivoExpediente.Guardar(listaExpedientes);
+        }
+
+        private void btnConsultarDenuncia_Click(object sender, EventArgs e)
+        {
+            FormConsulta consulta = new FormConsulta();
+            consulta.ShowDialog();
+        }
     }
 }

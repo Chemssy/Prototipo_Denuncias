@@ -40,15 +40,13 @@ namespace Prototipo_Denuncias
 
         private void FormNuevaDenuncia_Load(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            // Genera el código con la convención solicitada
-            string codigoAleatorio = "EXP-" + rnd.Next(10000, 99999).ToString();
-
-            lblCodigoExpediente.Text = codigoAleatorio;
+            lblCodigoExpediente.Text = ArchivoExpediente.SiguienteCodigo();
         }
 
         private void btnRegistrarExpediente_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos()) return;//No se guarda si falta algun dato
+
             ExpedienteGenerado = new Expediente
             {
                 Codigo = lblCodigoExpediente.Text,
@@ -70,6 +68,62 @@ namespace Prototipo_Denuncias
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private bool ValidarCampos()
+        {
+            if (txtDNI.Text.Trim() == "")
+            {
+                MostrarAviso("Ingrese el DNI del denunciante.", txtDNI);
+                return false;
+            }
+
+            if (txtDNI.Text.Trim().Length != 8 || !txtDNI.Text.Trim().All(char.IsDigit))
+            {
+                MostrarAviso("El DNI debe tener exactamente 8 dígitos numéricos.", txtDNI);
+                return false;
+            }
+
+            if (txtNombreCompleto.Text.Trim() == "")
+            {
+                MostrarAviso("Ingrese el nombre completo del denunciante.", txtNombreCompleto);
+                return false;
+            }
+
+            if (comboBoxCategoriaDenuncia.SelectedIndex == -1)
+            {
+                MostrarAviso("Seleccione la categoría de la denuncia.", comboBoxCategoriaDenuncia);
+                return false;
+            }
+
+            if (comboBoxDistritoSuceso.SelectedIndex == -1)
+            {
+                MostrarAviso("Seleccione el distrito del suceso.", comboBoxDistritoSuceso);
+                return false;
+            }
+
+            if (comboBoxEstado.SelectedIndex == -1)
+            {
+                MostrarAviso("Seleccione el estado de la denuncia.", comboBoxEstado);
+                return false;
+            }
+
+            if (txtDescripcion.Text.Trim() == "")
+            {
+                MostrarAviso("Ingrese la descripción de la denuncia.", txtDescripcion);
+                return false;
+            }
+
+            return true;   // todo está completo
+        }
+
+        private void MostrarAviso(string mensaje, Control campo)
+        {
+            MessageBox.Show(mensaje,
+                            "Campo requerido",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+            campo.Focus();   // deja el cursor en el campo con problema
         }
     }
 }

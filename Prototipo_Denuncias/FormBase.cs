@@ -33,7 +33,7 @@ namespace Prototipo_Denuncias
             // Limpiamos por si acaso para no duplicar datos si se llama dos veces
             comboDestino.Items.Clear();
 
-            // Tu arreglo original
+            // Arreglo
             string[] tiposDelitos = {
             "Delito Contra el Patrimonio",
             "Extorsion y Cobro de Cupos",
@@ -127,6 +127,5 @@ namespace Prototipo_Denuncias
                     m.Result = (IntPtr)11; // Borde derecho[cite: 16]
             }
         }
-
     }
 }

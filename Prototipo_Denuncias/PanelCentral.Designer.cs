@@ -35,7 +35,7 @@
             dgvCategoria = new DataGridViewTextBoxColumn();
             dgvRemitente = new DataGridViewTextBoxColumn();
             dgvEfectivoPolicial = new DataGridViewTextBoxColumn();
-            dgvEstado = new DataGridViewTextBoxColumn();
+            dgvEstado = new DataGridViewComboBoxColumn();
             label5 = new Label();
             panel3 = new Panel();
             txtCodigoDenuncia = new TextBox();
@@ -69,7 +69,7 @@
             // 
             // panelBotonesSuperior
             // 
-            panelBotonesSuperior.Size = new Size(1062, 32);
+            panelBotonesSuperior.Size = new Size(928, 24);
             // 
             // panel1
             // 
@@ -80,9 +80,10 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(3, 35);
+            panel1.Location = new Point(3, 26);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1062, 562);
+            panel1.Size = new Size(928, 422);
             panel1.TabIndex = 1;
             // 
             // dgvExpedientes
@@ -92,11 +93,11 @@
             dgvExpedientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvExpedientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvExpedientes.Columns.AddRange(new DataGridViewColumn[] { dgvCodigo, dgvFechaRegistro, dgvCategoria, dgvRemitente, dgvEfectivoPolicial, dgvEstado });
-            dgvExpedientes.Location = new Point(355, 283);
+            dgvExpedientes.Location = new Point(311, 212);
+            dgvExpedientes.Margin = new Padding(3, 2, 3, 2);
             dgvExpedientes.Name = "dgvExpedientes";
-            dgvExpedientes.ReadOnly = true;
             dgvExpedientes.RowHeadersWidth = 51;
-            dgvExpedientes.Size = new Size(680, 216);
+            dgvExpedientes.Size = new Size(595, 162);
             dgvExpedientes.TabIndex = 4;
             // 
             // dgvCodigo
@@ -104,51 +105,47 @@
             dgvCodigo.HeaderText = "CODIGO";
             dgvCodigo.MinimumWidth = 6;
             dgvCodigo.Name = "dgvCodigo";
-            dgvCodigo.ReadOnly = true;
             // 
             // dgvFechaRegistro
             // 
             dgvFechaRegistro.HeaderText = "FECHA DE REGISTRO";
             dgvFechaRegistro.MinimumWidth = 6;
             dgvFechaRegistro.Name = "dgvFechaRegistro";
-            dgvFechaRegistro.ReadOnly = true;
             // 
             // dgvCategoria
             // 
             dgvCategoria.HeaderText = "CATEGORIA";
             dgvCategoria.MinimumWidth = 6;
             dgvCategoria.Name = "dgvCategoria";
-            dgvCategoria.ReadOnly = true;
             // 
             // dgvRemitente
             // 
             dgvRemitente.HeaderText = "REMITENTE";
             dgvRemitente.MinimumWidth = 6;
             dgvRemitente.Name = "dgvRemitente";
-            dgvRemitente.ReadOnly = true;
             // 
             // dgvEfectivoPolicial
             // 
             dgvEfectivoPolicial.HeaderText = "EFECTIVO A CARGO";
             dgvEfectivoPolicial.MinimumWidth = 6;
             dgvEfectivoPolicial.Name = "dgvEfectivoPolicial";
-            dgvEfectivoPolicial.ReadOnly = true;
             // 
             // dgvEstado
             // 
             dgvEstado.HeaderText = "ESTADO";
             dgvEstado.MinimumWidth = 6;
             dgvEstado.Name = "dgvEstado";
-            dgvEstado.ReadOnly = true;
+            dgvEstado.Resizable = DataGridViewTriState.True;
+            dgvEstado.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(229, 233, 240);
             label5.Font = new Font("Segoe UI", 8F);
-            label5.Location = new Point(364, 137);
+            label5.Location = new Point(318, 103);
             label5.Name = "label5";
-            label5.Size = new Size(129, 19);
+            label5.Size = new Size(110, 13);
             label5.TabIndex = 3;
             label5.Text = "Filtros de Busquéda";
             // 
@@ -163,25 +160,27 @@
             panel3.Controls.Add(label6);
             panel3.Controls.Add(btnBuscar);
             panel3.Controls.Add(comboBoxTipoDenuncia);
-            panel3.Location = new Point(342, 150);
+            panel3.Location = new Point(299, 112);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(694, 74);
+            panel3.Size = new Size(607, 56);
             panel3.TabIndex = 2;
             // 
             // txtCodigoDenuncia
             // 
             txtCodigoDenuncia.Font = new Font("Segoe UI", 10F);
-            txtCodigoDenuncia.Location = new Point(171, 30);
+            txtCodigoDenuncia.Location = new Point(150, 22);
+            txtCodigoDenuncia.Margin = new Padding(3, 2, 3, 2);
             txtCodigoDenuncia.Name = "txtCodigoDenuncia";
-            txtCodigoDenuncia.Size = new Size(122, 30);
+            txtCodigoDenuncia.Size = new Size(107, 25);
             txtCodigoDenuncia.TabIndex = 5;
             // 
             // lblTotalRegistros
             // 
             lblTotalRegistros.AutoSize = true;
-            lblTotalRegistros.Location = new Point(616, 33);
+            lblTotalRegistros.Location = new Point(553, 32);
             lblTotalRegistros.Name = "lblTotalRegistros";
-            lblTotalRegistros.Size = new Size(50, 20);
+            lblTotalRegistros.Size = new Size(38, 15);
             lblTotalRegistros.TabIndex = 5;
             lblTotalRegistros.Text = "label9";
             // 
@@ -189,27 +188,29 @@
             // 
             label8.AutoSize = true;
             label8.FlatStyle = FlatStyle.Flat;
-            label8.Location = new Point(529, 33);
+            label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Location = new Point(483, 12);
             label8.Name = "label8";
-            label8.Size = new Size(81, 20);
+            label8.Size = new Size(108, 15);
             label8.TabIndex = 4;
-            label8.Text = "Mostrando";
+            label8.Text = "Total de Denuncias";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F);
-            label7.Location = new Point(171, 7);
+            label7.Location = new Point(150, 5);
             label7.Name = "label7";
-            label7.Size = new Size(58, 20);
+            label7.Size = new Size(46, 15);
             label7.TabIndex = 4;
             label7.Text = "Codigo";
             // 
             // btnLimpiar
             // 
-            btnLimpiar.Location = new Point(425, 28);
+            btnLimpiar.Location = new Point(372, 21);
+            btnLimpiar.Margin = new Padding(3, 2, 3, 2);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(82, 30);
+            btnLimpiar.Size = new Size(72, 22);
             btnLimpiar.TabIndex = 4;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = true;
@@ -219,17 +220,18 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F);
-            label6.Location = new Point(19, 7);
+            label6.Location = new Point(17, 5);
             label6.Name = "label6";
-            label6.Size = new Size(39, 20);
+            label6.Size = new Size(31, 15);
             label6.TabIndex = 4;
             label6.Text = "Tipo";
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(313, 26);
+            btnBuscar.Location = new Point(274, 20);
+            btnBuscar.Margin = new Padding(3, 2, 3, 2);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(106, 34);
+            btnBuscar.Size = new Size(93, 26);
             btnBuscar.TabIndex = 4;
             btnBuscar.Text = "BUSCAR";
             btnBuscar.UseVisualStyleBackColor = true;
@@ -239,35 +241,37 @@
             // 
             comboBoxTipoDenuncia.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTipoDenuncia.FormattingEnabled = true;
-            comboBoxTipoDenuncia.Location = new Point(23, 30);
+            comboBoxTipoDenuncia.Location = new Point(20, 22);
+            comboBoxTipoDenuncia.Margin = new Padding(3, 2, 3, 2);
             comboBoxTipoDenuncia.Name = "comboBoxTipoDenuncia";
-            comboBoxTipoDenuncia.Size = new Size(123, 28);
+            comboBoxTipoDenuncia.Size = new Size(108, 23);
             comboBoxTipoDenuncia.TabIndex = 3;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(356, 91);
+            label4.Location = new Point(312, 68);
             label4.Name = "label4";
-            label4.Size = new Size(567, 20);
+            label4.Size = new Size(447, 15);
             label4.TabIndex = 1;
             label4.Text = "Expedientes ingresados y trámites documentarios activos de la dependencia policial";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(356, 62);
+            label3.Location = new Point(312, 46);
             label3.Name = "label3";
-            label3.Size = new Size(187, 20);
+            label3.Size = new Size(147, 15);
             label3.TabIndex = 0;
             label3.Text = "Bandeja de Mesa de Partes";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.home;
-            pictureBox1.Location = new Point(34, 107);
+            pictureBox1.Location = new Point(30, 80);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(30, 25);
+            pictureBox1.Size = new Size(26, 19);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -285,17 +289,19 @@
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(3, 35);
+            panel2.Location = new Point(3, 26);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(319, 562);
+            panel2.Size = new Size(279, 422);
             panel2.TabIndex = 0;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.search;
-            pictureBox3.Location = new Point(34, 211);
+            pictureBox3.Location = new Point(30, 158);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(30, 25);
+            pictureBox3.Size = new Size(26, 19);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
@@ -303,9 +309,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.plus;
-            pictureBox2.Location = new Point(34, 160);
+            pictureBox2.Location = new Point(30, 120);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(30, 25);
+            pictureBox2.Size = new Size(26, 19);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
@@ -317,14 +324,16 @@
             btnConsultarDenuncia.FlatStyle = FlatStyle.Flat;
             btnConsultarDenuncia.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnConsultarDenuncia.ForeColor = Color.FromArgb(226, 232, 240);
-            btnConsultarDenuncia.Location = new Point(30, 202);
+            btnConsultarDenuncia.Location = new Point(26, 152);
+            btnConsultarDenuncia.Margin = new Padding(3, 2, 3, 2);
             btnConsultarDenuncia.Name = "btnConsultarDenuncia";
-            btnConsultarDenuncia.Padding = new Padding(36, 0, 0, 0);
-            btnConsultarDenuncia.Size = new Size(274, 44);
+            btnConsultarDenuncia.Padding = new Padding(32, 0, 0, 0);
+            btnConsultarDenuncia.Size = new Size(240, 33);
             btnConsultarDenuncia.TabIndex = 1;
             btnConsultarDenuncia.Text = "CONSULTAR DENUNCIA";
             btnConsultarDenuncia.TextAlign = ContentAlignment.MiddleLeft;
             btnConsultarDenuncia.UseVisualStyleBackColor = false;
+            btnConsultarDenuncia.Click += btnConsultarDenuncia_Click;
             // 
             // btnNuevaSolicitud
             // 
@@ -333,10 +342,11 @@
             btnNuevaSolicitud.FlatStyle = FlatStyle.Flat;
             btnNuevaSolicitud.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
             btnNuevaSolicitud.ForeColor = Color.FromArgb(226, 232, 240);
-            btnNuevaSolicitud.Location = new Point(30, 150);
+            btnNuevaSolicitud.Location = new Point(26, 112);
+            btnNuevaSolicitud.Margin = new Padding(3, 2, 3, 2);
             btnNuevaSolicitud.Name = "btnNuevaSolicitud";
-            btnNuevaSolicitud.Padding = new Padding(36, 0, 0, 0);
-            btnNuevaSolicitud.Size = new Size(274, 44);
+            btnNuevaSolicitud.Padding = new Padding(32, 0, 0, 0);
+            btnNuevaSolicitud.Size = new Size(240, 33);
             btnNuevaSolicitud.TabIndex = 1;
             btnNuevaSolicitud.Text = "NUEVA SOLICITUD";
             btnNuevaSolicitud.TextAlign = ContentAlignment.MiddleLeft;
@@ -350,9 +360,10 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalir.ForeColor = Color.White;
-            btnSalir.Location = new Point(30, 499);
+            btnSalir.Location = new Point(26, 374);
+            btnSalir.Margin = new Padding(3, 2, 3, 2);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(114, 44);
+            btnSalir.Size = new Size(100, 33);
             btnSalir.TabIndex = 1;
             btnSalir.Text = "Cerrar sesion";
             btnSalir.TextAlign = ContentAlignment.MiddleLeft;
@@ -366,10 +377,11 @@
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicio.ForeColor = Color.White;
-            btnInicio.Location = new Point(30, 98);
+            btnInicio.Location = new Point(26, 74);
+            btnInicio.Margin = new Padding(3, 2, 3, 2);
             btnInicio.Name = "btnInicio";
-            btnInicio.Padding = new Padding(36, 0, 0, 0);
-            btnInicio.Size = new Size(274, 44);
+            btnInicio.Padding = new Padding(32, 0, 0, 0);
+            btnInicio.Size = new Size(240, 33);
             btnInicio.TabIndex = 1;
             btnInicio.Text = "INICIO";
             btnInicio.TextAlign = ContentAlignment.MiddleLeft;
@@ -379,9 +391,9 @@
             // 
             label2.AutoSize = true;
             label2.ForeColor = Color.FromArgb(110, 231, 183);
-            label2.Location = new Point(30, 43);
+            label2.Location = new Point(26, 32);
             label2.Name = "label2";
-            label2.Size = new Size(163, 20);
+            label2.Size = new Size(129, 15);
             label2.TabIndex = 0;
             label2.Text = "Dipincri Independencia";
             // 
@@ -390,20 +402,20 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(30, 23);
+            label1.Location = new Point(26, 17);
             label1.Name = "label1";
-            label1.Size = new Size(199, 20);
+            label1.Size = new Size(155, 15);
             label1.TabIndex = 0;
             label1.Text = "MESA DE PARTES VIRTUAL";
             // 
             // PanelCentral
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1068, 600);
+            ClientSize = new Size(934, 450);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            MinimumSize = new Size(1020, 600);
+            MinimumSize = new Size(892, 450);
             Name = "PanelCentral";
             Text = "PanelCentral";
             Controls.SetChildIndex(panelBotonesSuperior, 0);
@@ -447,12 +459,12 @@
         private DataGridView dgvExpedientes;
         private Label lblTotalRegistros;
         private Button btnSalir;
+        private TextBox txtCodigoDenuncia;
         private DataGridViewTextBoxColumn dgvCodigo;
         private DataGridViewTextBoxColumn dgvFechaRegistro;
         private DataGridViewTextBoxColumn dgvCategoria;
         private DataGridViewTextBoxColumn dgvRemitente;
         private DataGridViewTextBoxColumn dgvEfectivoPolicial;
-        private DataGridViewTextBoxColumn dgvEstado;
-        private TextBox txtCodigoDenuncia;
+        private DataGridViewComboBoxColumn dgvEstado;
     }
 }
