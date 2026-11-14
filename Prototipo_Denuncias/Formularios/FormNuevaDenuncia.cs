@@ -21,8 +21,8 @@ namespace Prototipo_Denuncias
         {
             InitializeComponent();
             DatosSistema.CargarTiposDelitos(comboBoxCategoriaDenuncia);
-            DatosSistema.CargarTiposDistritos(comboBoxCategoriaDenuncia);
-            DatosSistema.CargarTiposEstados(comboBoxCategoriaDenuncia);
+            DatosSistema.CargarTiposDistritos(comboBoxDistritoSuceso);
+            DatosSistema.CargarTiposEstados(comboBoxEstado);
             
             
             ConfigurarModal();
