@@ -82,18 +82,18 @@ namespace Prototipo_Denuncias
         }
 
 
-        void Salir()
+        void CerrarSesion()
         {
             DialogResult respuesta;
 
-            respuesta = MessageBox.Show("¿Estas seguro de salir?",
+            respuesta = MessageBox.Show("¿Estas seguro de Cerrar Sesion?",
                                         "Mensaje de confirmacion",
                                         MessageBoxButtons.YesNo,
                                         MessageBoxIcon.Question);
 
             if (respuesta == DialogResult.Yes)
             {
-                Application.Exit();
+                Application.Restart();
             }
 
 
@@ -108,7 +108,7 @@ namespace Prototipo_Denuncias
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Salir();
+            CerrarSesion();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

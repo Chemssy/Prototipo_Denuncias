@@ -387,7 +387,7 @@
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "|";
-            Resize += Login_Resize;
+            //Resize += Login_Resize;
             Controls.SetChildIndex(panelBotonesSuperior, 0);
             Controls.SetChildIndex(panel2, 0);
             Controls.SetChildIndex(panelForm, 0);
