@@ -15,7 +15,7 @@ namespace Prototipo_Denuncias
 
         bool AutenticarUsuario(string cip, string contrasena)
         {
-            return usuariosPoliciales.ContainsKey(cip) && usuariosPoliciales[cip] == contrasena;
+            return DatosSistema.usuariosPoliciales.ContainsKey(cip) && DatosSistema.usuariosPoliciales[cip] == contrasena;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

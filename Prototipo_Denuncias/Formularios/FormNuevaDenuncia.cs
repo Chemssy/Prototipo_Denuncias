@@ -20,28 +20,15 @@ namespace Prototipo_Denuncias
         public FormNuevaDenuncia()
         {
             InitializeComponent();
-            CargarTiposDelitos(comboBoxCategoriaDenuncia);
-            CargarTiposDistritos();
-            CargarTiposEstados();
-
+            DatosSistema.CargarTiposDelitos(comboBoxCategoriaDenuncia);
+            DatosSistema.CargarTiposDistritos(comboBoxCategoriaDenuncia);
+            DatosSistema.CargarTiposEstados(comboBoxCategoriaDenuncia);
+            
             
             ConfigurarModal();
             
         }
         
-
-        void CargarTiposDistritos()
-        {
-            string[] tiposDistritos = { "Independencia", "Los Olivos", "Comas", "Carabayllo", "Miraflores" };
-            comboBoxDistritoSuceso.Items.AddRange(tiposDistritos);
-        }
-
-        void CargarTiposEstados()
-        {
-            string[] tiposEstados = { "Recibida", "En trámite", "Resuelta" };
-            comboBoxEstado.Items.AddRange(tiposEstados);
-        }
-
         private void FormNuevaDenuncia_Load(object sender, EventArgs e)
         {
             lblCodigoExpediente.Text = ArchivoExpediente.SiguienteCodigo();

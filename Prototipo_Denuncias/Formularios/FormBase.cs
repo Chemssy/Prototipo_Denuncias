@@ -14,6 +14,7 @@ namespace Prototipo_Denuncias
         int x, y;
         bool move;
 
+        // Propiedad que se encarga de controlar el acceso a datos
         protected bool PermitirRedimenzionar { get; set; } = true;
 
         public FormBase()
@@ -23,12 +24,7 @@ namespace Prototipo_Denuncias
             this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
-        protected Dictionary<string, string> usuariosPoliciales = new Dictionary<string, string>()
-        {
-            { "31894022", "admin123" },
-            { "76543210", "seguro456" },
-            { "12345678", "policia123" }
-        };
+        
 
         protected void ConfigurarModal()
         {
@@ -37,23 +33,6 @@ namespace Prototipo_Denuncias
             pictureBoxMaximizar.Visible = false;
         }
 
-        protected void CargarTiposDelitos(ComboBox comboDestino)
-        {
-            // Limpiamos por si acaso para no duplicar datos si se llama dos veces
-            comboDestino.Items.Clear();
-
-            // Arreglo
-            string[] tiposDelitos = {
-            "Delito Contra el Patrimonio",
-            "Extorsion y Cobro de Cupos",
-            "Delito Contra la Vida, el Cuerpo y la Salud",
-            "Microcomercialización de Drogas",
-            "Delitos Informaticos y Estafas"
-            };
-
-            // Llenamos el ComboBox que nos envíen como parámetro
-            comboDestino.Items.AddRange(tiposDelitos);
-        }
 
         private void panelBotonesSuperior_MouseUp(object sender, MouseEventArgs e)
         {

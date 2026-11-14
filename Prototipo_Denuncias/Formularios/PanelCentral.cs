@@ -14,16 +14,13 @@ namespace Prototipo_Denuncias
     {
 
         private List<Expediente> listaExpedientes = new List<Expediente>();
-        private string[] tiposDelitos = { "Delito Contra el Patrimonio", "Extorsion y Cobro de Cupos", "Delito Contra la Vida, el Cuerpo y la Salud", "Microcomercialización de Drogas", "Delitos Informaticos y Estafas" };
-        private string[] tiposDistritos = { "Independencia", "Los Olivos", "Comas", "Carabayllo", "Miraflores" };
-        private string[] tiposEstados = { "Recibida", "En trámite", "Resuelta" };
 
         public PanelCentral()
         {
             InitializeComponent();
-            CargarTiposDelitos(comboBoxTipoDenuncia);
+            DatosSistema.CargarTiposDelitos(comboBoxTipoDenuncia);
 
-            dgvEstado.Items.AddRange(tiposEstados);
+            dgvEstado.Items.AddRange(DatosSistema.TiposEstados);
             dgvExpedientes.EditMode = DataGridViewEditMode.EditOnEnter;  // se abre el combobox del data grid view 
             dgvExpedientes.CurrentCellDirtyStateChanged += dgvExpedientes_CurrentCellDirtyStateChanged;
             dgvExpedientes.CellValueChanged += dgvExpedientes_CellValueChanged;
@@ -50,9 +47,9 @@ namespace Prototipo_Denuncias
                 FechaRegistro = "19/10/2026 08:30",
                 DNI = "72458912",
                 Nombres = "Juan Perez Garcia",
-                Categoria = tiposDelitos[0],
-                Distrito = tiposDistritos[0],
-                Estado = tiposEstados[1],
+                Categoria = DatosSistema.TiposDelitos[0],
+                Distrito = DatosSistema.TiposDistritos[0],
+                Estado = DatosSistema.TiposEstados[1],
                 Descripcion = "Robo de celular"
             });
 
@@ -62,9 +59,9 @@ namespace Prototipo_Denuncias
                 FechaRegistro = "19/10/2026 14:15",
                 DNI = "45871236",
                 Nombres = "Maria Gomez Silva",
-                Categoria = tiposDelitos[1],
-                Distrito = tiposDistritos[2],
-                Estado = tiposEstados[0],
+                Categoria = DatosSistema.TiposDelitos[1],
+                Distrito = DatosSistema.TiposDistritos[2],
+                Estado = DatosSistema.TiposEstados[0],
                 Descripcion = "Llamadas extorsivas"
             });
 
@@ -74,9 +71,9 @@ namespace Prototipo_Denuncias
                 FechaRegistro = "20/10/2026 09:45",
                 DNI = "09876543",
                 Nombres = "Carlos Ruiz Diaz",
-                Categoria = tiposDelitos[4],
-                Distrito = tiposDistritos[0],
-                Estado = tiposEstados[2],
+                Categoria = DatosSistema.TiposDelitos[4],
+                Distrito = DatosSistema.TiposDistritos[0],
+                Estado = DatosSistema.TiposEstados[2],
                 Descripcion = "Estafa por WhatsApp"
             });
         }
