@@ -14,6 +14,8 @@ namespace Prototipo_Denuncias
         int x, y;
         bool move;
 
+        protected bool PermitirRedimenzionar { get; set; } = true;
+
         public FormBase()
         {
             InitializeComponent();
@@ -27,6 +29,13 @@ namespace Prototipo_Denuncias
             { "76543210", "seguro456" },
             { "12345678", "policia123" }
         };
+
+        protected void ConfigurarModal()
+        {
+            PermitirRedimenzionar = false;
+            pictureBoxMinimizar.Visible = false;
+            pictureBoxMaximizar.Visible = false;
+        }
 
         protected void CargarTiposDelitos(ComboBox comboDestino)
         {
@@ -66,9 +75,42 @@ namespace Prototipo_Denuncias
             }
         }
 
+        void Salir()
+        {
+
+            if (!PermitirRedimenzionar)
+            {
+                ConfigurarModal();
+
+                DialogResult respuestaModal = MessageBox.Show("¿Estas seguro de cerrar esta ventana?",
+                                                                "Confirmacion",
+                                                                MessageBoxButtons.YesNo,
+                                                                MessageBoxIcon.Question);
+
+                if(respuestaModal == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                return;
+
+            }
+            
+            DialogResult respuesta;
+
+            respuesta = MessageBox.Show("¿Esta seguro de salir?",
+                                        "Mensaje de confirmacion",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question);
+
+            if(respuesta == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
         private void pictureBoxCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Salir();
         }
 
         private void pictureBoxMinimizar_Click(object sender, EventArgs e)
@@ -95,6 +137,8 @@ namespace Prototipo_Denuncias
             const int bordeGrosor = 10; // Grosor del área para arrastrar en píxeles
 
             base.WndProc(ref m);
+
+            if (!PermitirRedimenzionar) return;
 
             if (m.Msg == WM_NCHITTEST)
             {

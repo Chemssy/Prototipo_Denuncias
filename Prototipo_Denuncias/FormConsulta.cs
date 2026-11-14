@@ -8,11 +8,13 @@ using System.Windows.Forms;
 
 namespace Prototipo_Denuncias
 {
-    public partial class FormConsulta : Form
+    public partial class FormConsulta : FormBase
     {
         public FormConsulta()
         {
             InitializeComponent();
+            
+            ConfigurarModal();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

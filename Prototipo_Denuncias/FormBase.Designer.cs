@@ -47,7 +47,7 @@
             panelBotonesSuperior.Dock = DockStyle.Top;
             panelBotonesSuperior.Location = new Point(3, 3);
             panelBotonesSuperior.Name = "panelBotonesSuperior";
-            panelBotonesSuperior.Size = new Size(1434, 32);
+            panelBotonesSuperior.Size = new Size(1194, 32);
             panelBotonesSuperior.TabIndex = 0;
             panelBotonesSuperior.MouseDown += panelBotonesSuperior_MouseDown;
             panelBotonesSuperior.MouseMove += panelBotonesSuperior_MouseMove;
@@ -57,7 +57,7 @@
             // 
             pictureBoxCerrar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxCerrar.Image = Properties.Resources.x;
-            pictureBoxCerrar.Location = new Point(1396, 3);
+            pictureBoxCerrar.Location = new Point(1156, 3);
             pictureBoxCerrar.Name = "pictureBoxCerrar";
             pictureBoxCerrar.Size = new Size(25, 25);
             pictureBoxCerrar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -69,7 +69,7 @@
             // 
             pictureBoxMinimizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxMinimizar.Image = Properties.Resources.minus;
-            pictureBoxMinimizar.Location = new Point(1335, 4);
+            pictureBoxMinimizar.Location = new Point(1095, 4);
             pictureBoxMinimizar.Name = "pictureBoxMinimizar";
             pictureBoxMinimizar.Size = new Size(25, 25);
             pictureBoxMinimizar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -81,7 +81,7 @@
             // 
             pictureBoxMaximizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxMaximizar.Image = Properties.Resources.maximize;
-            pictureBoxMaximizar.Location = new Point(1366, 3);
+            pictureBoxMaximizar.Location = new Point(1126, 3);
             pictureBoxMaximizar.Name = "pictureBoxMaximizar";
             pictureBoxMaximizar.Size = new Size(25, 25);
             pictureBoxMaximizar.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -94,7 +94,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 41, 59);
-            ClientSize = new Size(1440, 800);
+            ClientSize = new Size(1200, 800);
             Controls.Add(panelBotonesSuperior);
             FormBorderStyle = FormBorderStyle.None;
             MinimumSize = new Size(1200, 800);

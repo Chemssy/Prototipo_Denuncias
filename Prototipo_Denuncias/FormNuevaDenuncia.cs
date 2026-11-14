@@ -12,6 +12,7 @@ namespace Prototipo_Denuncias
     {
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        
         public Expediente ExpedienteGenerado { get; set; }
         
         
@@ -22,6 +23,9 @@ namespace Prototipo_Denuncias
             CargarTiposDelitos(comboBoxCategoriaDenuncia);
             CargarTiposDistritos();
             CargarTiposEstados();
+
+            
+            ConfigurarModal();
             
         }
         
