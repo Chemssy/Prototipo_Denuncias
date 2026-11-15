@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel2 = new Panel();
             panelForm = new Panel();
+            btnManualUsuario = new Button();
             pictureBox6 = new PictureBox();
             btnLector = new Button();
             label11 = new Label();
@@ -68,23 +69,20 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxLogoPNP).BeginInit();
             SuspendLayout();
             // 
-            // panelBotonesSuperior
-            // 
-            panelBotonesSuperior.Size = new Size(1048, 32);
-            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(13, 59, 38);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(3, 721);
+            panel2.Location = new Point(3, 759);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1048, 38);
+            panel2.Size = new Size(1194, 38);
             panel2.TabIndex = 1;
             // 
             // panelForm
             // 
             panelForm.Anchor = AnchorStyles.None;
             panelForm.BackColor = Color.White;
+            panelForm.Controls.Add(btnManualUsuario);
             panelForm.Controls.Add(pictureBox6);
             panelForm.Controls.Add(btnLector);
             panelForm.Controls.Add(label11);
@@ -102,11 +100,25 @@
             panelForm.Controls.Add(label2);
             panelForm.Controls.Add(label1);
             panelForm.Controls.Add(pictureBoxLogoPNP);
-            panelForm.Location = new Point(283, 57);
+            panelForm.Location = new Point(356, 76);
             panelForm.MaximumSize = new Size(650, 700);
             panelForm.Name = "panelForm";
             panelForm.Size = new Size(540, 635);
             panelForm.TabIndex = 2;
+            // 
+            // btnManualUsuario
+            // 
+            btnManualUsuario.BackColor = Color.FromArgb(13, 59, 38);
+            btnManualUsuario.FlatStyle = FlatStyle.Flat;
+            btnManualUsuario.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnManualUsuario.ForeColor = Color.White;
+            btnManualUsuario.Location = new Point(405, 498);
+            btnManualUsuario.Name = "btnManualUsuario";
+            btnManualUsuario.Size = new Size(132, 41);
+            btnManualUsuario.TabIndex = 3;
+            btnManualUsuario.Text = "Guia de usuario";
+            btnManualUsuario.UseVisualStyleBackColor = false;
+            btnManualUsuario.Click += btnManualUsuario_Click;
             // 
             // pictureBox6
             // 
@@ -381,13 +393,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = Color.FromArgb(30, 41, 59);
-            ClientSize = new Size(1054, 762);
+            ClientSize = new Size(1200, 800);
             Controls.Add(panelForm);
             Controls.Add(panel2);
             Name = "Login";
-            StartPosition = FormStartPosition.CenterScreen;
             Text = "|";
-            //Resize += Login_Resize;
             Controls.SetChildIndex(panelBotonesSuperior, 0);
             Controls.SetChildIndex(panel2, 0);
             Controls.SetChildIndex(panelForm, 0);
@@ -436,5 +446,6 @@
         private Label label11;
         private Button btnLector;
         private PictureBox pictureBox6;
+        private Button btnManualUsuario;
     }
 }

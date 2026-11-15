@@ -11,8 +11,8 @@ namespace Prototipo_Denuncias
     public partial class FormBase : Form
     {
 
-        int x, y;
-        bool move;
+        private int x, y;
+        private bool move;
 
         // Propiedad que se encarga de controlar el acceso a datos
         protected bool PermitirRedimenzionar { get; set; } = true;

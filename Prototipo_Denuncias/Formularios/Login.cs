@@ -20,7 +20,7 @@ namespace Prototipo_Denuncias
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string usuarioCIP = txtUsuario.Text; 
+            string usuarioCIP = txtUsuario.Text;
             string contrasena = txtContrasena.Text;
 
             if (!EsFormatoCipValido(usuarioCIP))
@@ -29,13 +29,13 @@ namespace Prototipo_Denuncias
                                 "Validación de Formato",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
-                return; 
+                return;
             }
 
-            if (AutenticarUsuario(usuarioCIP,contrasena))
+            if (AutenticarUsuario(usuarioCIP, contrasena))
             {
-                PanelCentral formularioPrincipal = new PanelCentral(); 
-                formularioPrincipal.Show(); 
+                PanelCentral formularioPrincipal = new PanelCentral();
+                formularioPrincipal.Show();
                 this.Hide();
             }
             else
@@ -46,6 +46,25 @@ namespace Prototipo_Denuncias
                         MessageBoxIcon.Error);
             }
 
+        }
+
+        void AbrirManual()
+        {
+            DialogResult respuesta = MessageBox.Show("¿Esta seguro de abrir el manual de Usuario?",
+                                                    "Mensaje de confirmacion",
+                                                    MessageBoxButtons.YesNo,
+                                                    MessageBoxIcon.Question);
+
+            if(respuesta == DialogResult.Yes)
+            {
+                DatosSistema.AbrirManualUsuario();
+            }
+
+        }
+
+        private void btnManualUsuario_Click(object sender, EventArgs e)
+        {
+            AbrirManual();
         }
     }
 }

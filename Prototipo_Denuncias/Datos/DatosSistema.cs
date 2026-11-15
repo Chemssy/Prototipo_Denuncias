@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Text;
 
@@ -7,6 +8,32 @@ namespace Prototipo_Denuncias
 {
     internal class DatosSistema
     {
+
+        public static readonly string RutaManual = Path.Combine(Application.StartupPath, "ManualUsuario.pdf");
+
+        public static void AbrirManualUsuario()
+        {
+
+            if(!File.Exists(RutaManual)){
+
+                MessageBox.Show("No se encontro el archivo ManualUsuario.pdf en la carpeta del sistema",
+                    "Archivo no encontrado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
+                return;
+
+            }
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = RutaManual,
+                UseShellExecute = true
+            });
+
+        }
+
+
         public static readonly Dictionary<string, string> usuariosPoliciales = new Dictionary<string, string>()
         {
             { "31894022", "admin123" },
