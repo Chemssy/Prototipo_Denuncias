@@ -69,7 +69,7 @@
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(45, 61);
             panel1.Name = "panel1";
-            panel1.Size = new Size(741, 677);
+            panel1.Size = new Size(741, 706);
             panel1.TabIndex = 2;
             // 
             // panel3
@@ -117,7 +117,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(600, 604);
+            btnCancelar.Location = new Point(600, 645);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(104, 43);
             btnCancelar.TabIndex = 6;
@@ -145,7 +145,7 @@
             panelResumen.Controls.Add(label3);
             panelResumen.Location = new Point(45, 208);
             panelResumen.Name = "panelResumen";
-            panelResumen.Size = new Size(659, 391);
+            panelResumen.Size = new Size(659, 431);
             panelResumen.TabIndex = 5;
             panelResumen.TabStop = false;
             panelResumen.Text = "RESUMEN DE DENUNCIA";
@@ -153,16 +153,16 @@
             // txtDescripcion
             // 
             txtDescripcion.Enabled = false;
-            txtDescripcion.Location = new Point(193, 279);
+            txtDescripcion.Location = new Point(206, 275);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(267, 84);
+            txtDescripcion.Size = new Size(426, 137);
             txtDescripcion.TabIndex = 8;
             // 
             // txtEstado
             // 
             txtEstado.Enabled = false;
-            txtEstado.Location = new Point(177, 241);
+            txtEstado.Location = new Point(206, 241);
             txtEstado.Margin = new Padding(3, 4, 3, 4);
             txtEstado.Name = "txtEstado";
             txtEstado.Size = new Size(220, 27);
@@ -171,7 +171,7 @@
             // txtDistrito
             // 
             txtDistrito.Enabled = false;
-            txtDistrito.Location = new Point(177, 208);
+            txtDistrito.Location = new Point(206, 209);
             txtDistrito.Margin = new Padding(3, 4, 3, 4);
             txtDistrito.Name = "txtDistrito";
             txtDistrito.Size = new Size(220, 27);
@@ -180,7 +180,7 @@
             // txtDelito
             // 
             txtDelito.Enabled = false;
-            txtDelito.Location = new Point(177, 172);
+            txtDelito.Location = new Point(206, 173);
             txtDelito.Margin = new Padding(3, 4, 3, 4);
             txtDelito.Name = "txtDelito";
             txtDelito.Size = new Size(220, 27);
@@ -189,7 +189,7 @@
             // txtDenunciante
             // 
             txtDenunciante.Enabled = false;
-            txtDenunciante.Location = new Point(177, 137);
+            txtDenunciante.Location = new Point(206, 138);
             txtDenunciante.Margin = new Padding(3, 4, 3, 4);
             txtDenunciante.Name = "txtDenunciante";
             txtDenunciante.Size = new Size(220, 27);
@@ -198,7 +198,7 @@
             // txtDni
             // 
             txtDni.Enabled = false;
-            txtDni.Location = new Point(177, 103);
+            txtDni.Location = new Point(206, 104);
             txtDni.Margin = new Padding(3, 4, 3, 4);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(220, 27);
@@ -207,7 +207,7 @@
             // txtFechaHora
             // 
             txtFechaHora.Enabled = false;
-            txtFechaHora.Location = new Point(177, 71);
+            txtFechaHora.Location = new Point(206, 72);
             txtFechaHora.Margin = new Padding(3, 4, 3, 4);
             txtFechaHora.Name = "txtFechaHora";
             txtFechaHora.Size = new Size(220, 27);
@@ -217,7 +217,7 @@
             // 
             txtCo.Enabled = false;
             txtCo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtCo.Location = new Point(177, 29);
+            txtCo.Location = new Point(206, 30);
             txtCo.Margin = new Padding(3, 4, 3, 4);
             txtCo.Name = "txtCo";
             txtCo.Size = new Size(220, 29);
@@ -332,14 +332,14 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 41, 59);
-            ClientSize = new Size(829, 763);
+            ClientSize = new Size(1200, 800);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(800, 600);
             Name = "FormConsulta";
-            Padding = new Padding(3, 3, 3, 3);
             Text = "FormConsulta";
+            Controls.SetChildIndex(panel1, 0);
+            Controls.SetChildIndex(panelBotonesSuperior, 0);
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();

@@ -229,6 +229,7 @@
             comboBoxCategoriaDenuncia.Name = "comboBoxCategoriaDenuncia";
             comboBoxCategoriaDenuncia.Size = new Size(243, 28);
             comboBoxCategoriaDenuncia.TabIndex = 0;
+            comboBoxCategoriaDenuncia.SelectedIndexChanged += comboBoxCategoriaDenuncia_SelectedIndexChanged;
             // 
             // groupBox1
             // 

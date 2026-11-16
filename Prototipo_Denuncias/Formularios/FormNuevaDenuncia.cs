@@ -12,23 +12,23 @@ namespace Prototipo_Denuncias
     {
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        
+
         public Expediente ExpedienteGenerado { get; set; }
-        
-        
-        
+
+
+
         public FormNuevaDenuncia()
         {
             InitializeComponent();
             DatosSistema.CargarTiposDelitos(comboBoxCategoriaDenuncia);
             DatosSistema.CargarTiposDistritos(comboBoxDistritoSuceso);
             DatosSistema.CargarTiposEstados(comboBoxEstado);
-            
-            
+
+
             ConfigurarModal();
-            
+
         }
-        
+
         private void FormNuevaDenuncia_Load(object sender, EventArgs e)
         {
             lblCodigoExpediente.Text = ArchivoExpediente.SiguienteCodigo();
@@ -115,6 +115,24 @@ namespace Prototipo_Denuncias
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Warning);
             campo.Focus();   // deja el cursor en el campo con problema
+        }
+
+        void cargarPLantilla()
+        {
+            if (comboBoxCategoriaDenuncia.SelectedIndex == -1) return;
+
+            string categoria = comboBoxCategoriaDenuncia.Text;
+            string plantilla = DatosSistema.ObtenerPlantilla(categoria);
+
+            if (!string.IsNullOrEmpty(plantilla))
+            {
+                txtDescripcion.Text = plantilla;
+            }
+        }
+
+        private void comboBoxCategoriaDenuncia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarPLantilla();
         }
     }
 }
