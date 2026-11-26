@@ -71,7 +71,6 @@
             // 
             panelBotonesSuperior.Location = new Point(3, 4);
             panelBotonesSuperior.Margin = new Padding(3, 4, 3, 4);
-            panelBotonesSuperior.Size = new Size(1194, 32);
             // 
             // panel1
             // 

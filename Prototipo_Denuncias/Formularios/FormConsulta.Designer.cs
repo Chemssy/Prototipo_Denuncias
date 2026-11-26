@@ -60,6 +60,10 @@
             panel2.SuspendLayout();
             SuspendLayout();
             // 
+            // panelBotonesSuperior
+            // 
+            panelBotonesSuperior.Size = new Size(870, 32);
+            // 
             // panel1
             // 
             panel1.BackColor = Color.White;
@@ -332,7 +336,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 41, 59);
-            ClientSize = new Size(1200, 800);
+            ClientSize = new Size(876, 800);
             Controls.Add(panel1);
             Margin = new Padding(3, 4, 3, 4);
             MinimumSize = new Size(800, 600);
